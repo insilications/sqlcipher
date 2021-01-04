@@ -1,0 +1,23 @@
+#
+# This file contains additional build requirements that did not get picked up
+# automatically. One name per line, no whitespace.
+#
+automake
+automake-dev
+gcc-dev
+gettext-bin
+libtool
+libtool-dev
+m4
+ncurses-dev
+pkg-config-dev
+readline-dev
+tcl
+tcl-dev
+tcl-staticdev
+valgrind
+valgrind-dev
+zlib-dev
+zlib-staticdev
+sqlite-autoconf-dev
+sqlite-autoconf-staticdev
