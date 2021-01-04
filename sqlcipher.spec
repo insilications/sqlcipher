@@ -5,7 +5,7 @@
 %define keepstatic 1
 Name     : sqlcipher
 Version  : 4.4.2
-Release  : 1
+Release  : 2
 URL      : file:///insilications/build/clearlinux/packages/sqlcipher/sqlcipher-4.4.2.tar.gz
 Source0  : file:///insilications/build/clearlinux/packages/sqlcipher/sqlcipher-4.4.2.tar.gz
 Summary  : SQL database engine
@@ -67,6 +67,14 @@ Requires: sqlcipher = %{version}-%{release}
 dev components for the sqlcipher package.
 
 
+%package extras-libciphertcl
+Summary: extras-libciphertcl components for the sqlcipher package.
+Group: Default
+
+%description extras-libciphertcl
+extras-libciphertcl components for the sqlcipher package.
+
+
 %package lib
 Summary: lib components for the sqlcipher package.
 Group: Libraries
@@ -94,7 +102,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1609784331
+export SOURCE_DATE_EPOCH=1609786720
 export GCC_IGNORE_WERROR=1
 ## altflags1 content
 export CFLAGS="-g -O3 -march=native -mtune=native -fgraphite-identity -Wall -Wl,--as-needed -Wl,--build-id=sha1 -Wl,--enable-new-dtags -Wl,--hash-style=gnu -Wl,-O2 -Wl,-z,now -Wl,-z,relro -falign-functions=32 -flimit-function-alignment -fasynchronous-unwind-tables -fdevirtualize-at-ltrans -floop-nest-optimize -fno-math-errno -fno-semantic-interposition -fno-stack-protector -fno-trapping-math -ftree-loop-distribute-patterns -ftree-loop-vectorize -ftree-vectorize -funroll-loops -fuse-ld=bfd -fuse-linker-plugin -malign-data=cacheline -feliminate-unused-debug-types -fipa-pta -flto=16 -fno-plt -mtls-dialect=gnu2 -Wl,-sort-common -Wno-error -Wp,-D_REENTRANT -pipe -ffat-lto-objects -fPIC -DSQLITE_HAS_CODEC -DSQLITE_HAS_CODEC -DSQLITE_TEMP_STORE=2"
@@ -133,10 +141,13 @@ export SQLITE_TEMP_STORE=2
 ## altflags1 end
 %configure  --enable-shared --enable-static --enable-tempstore=yes
 make  %{?_smp_mflags}  V=1 VERBOSE=1
+## ccache stats
+ccache -s
+## ccache stats
 
 
 %install
-export SOURCE_DATE_EPOCH=1609784331
+export SOURCE_DATE_EPOCH=1609786720
 rm -rf %{buildroot}
 %make_install
 
@@ -155,9 +166,12 @@ rm -rf %{buildroot}
 /usr/lib64/libsqlcipher.so
 /usr/lib64/pkgconfig/sqlcipher.pc
 
-%files lib
+%files extras-libciphertcl
 %defattr(-,root,root,-)
 /usr/lib/tcl8.6/sqlite3/libtclsqlite3.so
+
+%files lib
+%defattr(-,root,root,-)
 /usr/lib64/libsqlcipher.so.0
 /usr/lib64/libsqlcipher.so.0.8.6
 
