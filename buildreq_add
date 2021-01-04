@@ -2,14 +2,22 @@
 # This file contains additional build requirements that did not get picked up
 # automatically. One name per line, no whitespace.
 #
+#sqlite-autoconf-dev
+#sqlite-autoconf-staticdev
 automake
 automake-dev
+bzip2-dev
+bzip2-staticdev
 gcc-dev
 gettext-bin
 libtool
 libtool-dev
+libxml2-dev
+libxml2-staticdev
 m4
 ncurses-dev
+openssl-dev
+openssl-staticdev
 pkg-config-dev
 readline-dev
 tcl
@@ -17,7 +25,7 @@ tcl-dev
 tcl-staticdev
 valgrind
 valgrind-dev
+xz-dev
+xz-staticdev
 zlib-dev
 zlib-staticdev
-sqlite-autoconf-dev
-sqlite-autoconf-staticdev

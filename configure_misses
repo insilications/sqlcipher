@@ -1,0 +1,11 @@
+Configure miss: localtime_s
+Configure miss: tclsh8.7
+Configure miss: whether to allow connections to be shared across threads
+Configure miss: whether to support shared library linked as release mode or not
+Configure miss: library containing readline
+Configure miss: readline.h usability
+Configure miss: readline.h presence
+Configure miss: readline.h
+Configure miss: /usr/include/readline.h
+Configure miss: whether to support MEMSYS5
+Configure miss: whether to support MEMSYS3
